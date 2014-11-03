@@ -7,10 +7,10 @@
     "test": "npm run-script all-test",
     "all-test": "npm run-script jshint && npm run-script jscs && npm run-script coverage",
     "browser_test": "npm run-script generate_loader && npm run-script bundle",
-    "mocha": "node_modules\\.bin\\mocha -u tdd -R spec -r tests/setup_jsdom.js tests/**/*.js",
+    "mocha": "node_modules\\.bin\\mocha -u tdd -R spec -r tests/setup_jsdom.js tests/MediaFolder/*.js",
     "generate_loader": "node load_all_test_files.js",
     "bundle": "node_modules\\.bin\\browserify -t html2js-browserify tests/setup_framework.js all_test_file.js -o bundle.js",
-    "coverage": "node_modules\\.bin\\istanbul cover node_modules/mocha/bin/_mocha -- -u tdd -R spec -r tests/setup_jsdom.js libs/**/*.js tests/**/*.js",
+    "coverage": "node_modules\\.bin\\istanbul cover node_modules/mocha/bin/_mocha -- -u tdd -R spec -r tests/setup_jsdom.js libs/MediaFolder/*.js tests/MediaFolder/*.js",
     "jshint": "node_modules\\.bin\\jshint libs tests",
     "jscs": "node_modules\\.bin\\jscs -c .jscsrc libs tests",
     "jsdoc": "node_modules\\.bin\\jsdoc -c .jsdocrc libs/Chat libs/behaviors"
